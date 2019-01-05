@@ -1,4 +1,4 @@
-const staticCacheName = 'staticfiles';
+/*const staticCacheName = 'staticfiles';
 
 addEventListener('install', installEvent => {
     installEvent.waitUntil(
@@ -9,9 +9,9 @@ addEventListener('install', installEvent => {
             ])
         }
     ); //end waitUntil
-}); // end addEventListener
+}); // end addEventListener*/
 
-/*addEventListener('install', function(event){
+addEventListener('install', function(event){
     console.log('The service worker is installing...');
 });
 
@@ -34,4 +34,4 @@ addEventListener('fetch', fetchEvent => {
             );
         }) //end fetch catch
     ); //end respondWith
-}); //end addEventListener*/
+}); //end addEventListener

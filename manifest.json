@@ -1,0 +1,27 @@
+{
+    "lang": "en",
+    "name": "Brush your teeth",
+    "short_name": "Brushy Brush",
+    "description": "This is my progressive web app to help my daughter brush her teeth.",
+    "theme_color": "#333333",
+    "background_color": "#333333",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/small-icon.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {  
+            "src": "images/large-icon.jpg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        },
+        {  
+            "src": "images/large-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
