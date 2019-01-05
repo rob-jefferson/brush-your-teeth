@@ -1,14 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes, shrink-to-fit=no">
+    <link rel="serviceworker" href="serviceworker.js">
     <title>Brush your teeth!</title>
+    
 </head>
 <body>
+        
     <h1>Brush your teeth</h1>
-    <button id="audio" onclick="playAudio()">Go get your toothbrush, Ellie!</button>
+    <button id="audio" onclick="playAudio()">Go get your toothbrush!</button>
     <audio id="gettoothbrush">
         <source src="get-your-toothbrush.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -22,46 +26,28 @@
             Your browser does not support the video tag.
         </video>
     </div>
+    <section>
+        <h2>About</h2>
+        <p>This is a prototype <abbr title="Progressive Web App">PWA</abbr> to help my daughter brush her teeth and for me to learn more about PWAs. You can see the original video that's used in this on the <a href="https://www.youtube.com/watch?v=wxMrtK-kYnE" target="_blank">Sesame Street YouTube channel</a>.  
+    </section>
     <script>
-
-        //Custom audio controls
-        var myAudio = document.getElementById("gettoothbrush");
-
-        function playAudio() {
-            if (myAudio.paused) 
-                myAudio.play();
-        }
-
         // Starts the video 5 seconds in to skip the "Time to get your toothbrush!" CTA
         document.getElementById('toothbrush').addEventListener('loadedmetadata', function () {
-            this.currentTime = 5;
-        }, false);
-
-
-        // Custom video controls
-        var myVideo = document.getElementById("toothbrush");
-
-        function playPause() {
-            if (myVideo.paused) {
-                document.getElementById("playpause").innerHTML = "&#9208;";
-                myVideo.play();
-            }
-
-            else {
-                document.getElementById("playpause").innerHTML = "&#9654;";
-                myVideo.pause();
-            }
-        }
-
-        function alertLabel() {
-            alert(playLabel);
-        }
-
-        function restart() {
-            myVideo.currentTime = 5;
-            if (myVideo.paused)
-                myVideo.play();
-        }
+                this.currentTime = 5;
+            }, false);
     </script>
+    <script>
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/serviceworker.js')
+        .then( function(registration) {
+            console.log('Success!', registration.scope);
+        })
+        .catch(function(error) {
+            console.log('Failure!', error);
+        })
+        console.log('All done.');
+    }
+    </script>
+    <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>
