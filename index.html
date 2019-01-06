@@ -6,31 +6,38 @@
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes, shrink-to-fit=no">
     <!--<link rel="serviceworker" href="serviceworker.js">-->
-    <link rel="manifest" href="manifest.json"
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Brush your teeth!</title>
     
 </head>
-<body>
-        
+<body>      
+    <main>
     <h1>Brush your teeth</h1>
-    <button id="audio" onclick="playAudio()">Go get your toothbrush!</button>
-    <audio id="gettoothbrush">
-        <source src="get-your-toothbrush.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <h2>Start brushing</h2>
-    <button id="playpause" onclick="playPause()">&#9654;</button>
-    <button onclick="restart()">Restart</button>
-    <div>
-        <video id="toothbrush" width="320" height="240">
-            <source src="brushy-brush.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <section>
+        <h2>Call the child</h2>
+            <button id="audio" onclick="playAudio()">Go get your toothbrush!</button>
+            <audio id="gettoothbrush">
+                <source src="get-your-toothbrush.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+    </section>
+    <section>
+        <h2>Start brushing</h2>
+        <button id="playpause" onclick="playPause()">&#9654;</button>
+        <button onclick="restart()">Restart</button>
+        <div class="player">
+            <video id="toothbrush" width="320" height="240">
+                <source src="brushy-brush.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
     <section>
         <h2>About</h2>
         <p>This is a prototype <abbr title="Progressive Web App">PWA</abbr> to help my daughter brush her teeth and for me to learn more about PWAs. You can see the original video that's used in this on the <a href="https://www.youtube.com/watch?v=wxMrtK-kYnE" target="_blank">Sesame Street YouTube channel</a>.  
     </section>
+</main> 
     <script>
         // Starts the video 5 seconds in to skip the "Time to get your toothbrush!" CTA
         document.getElementById('toothbrush').addEventListener('loadedmetadata', function () {

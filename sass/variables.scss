@@ -1,0 +1,10 @@
+//breakpoints
+$width-small: 24em;
+$width-medium: 46.8em;
+$width-large: 50em;
+$width-xl: 73em;
+
+$mobile: "screen and (max-width: $width-small)";
+$tablet: "screen and (min-width: $width-small)";
+$desktop: "screen and (min-width: $width-large)";
+$desktop-xl: "screen and (min-width: $width-xl)";
