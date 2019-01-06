@@ -13,29 +13,33 @@
 </head>
 <body>      
     <main>
-    <h1>Brush your teeth</h1>
-    <section>
-        <h2>Call the child</h2>
-            <button id="audio" onclick="playAudio()">Go get your toothbrush!</button>
-            <audio id="gettoothbrush">
-                <source src="get-your-toothbrush.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-    </section>
-    <section>
-        <h2>Start brushing</h2>
-        <button id="playpause" onclick="playPause()">&#9654;</button>
-        <button onclick="restart()">Restart</button>
+        <div class="row">
+            <h1>Brush your teeth</h1>
+        </div>
+        <div class="controls">
+            <button onclick="restart()">Restart</button>
+            <button id="playpause" onclick="playPause()">Play</button>
+            <button id="audio" onclick="playAudio()">Call the child</button>
+        </div>
+        <section>
         <div class="player">
             <video id="toothbrush" width="320" height="240">
                 <source src="brushy-brush.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
+        <div>
+            <audio id="gettoothbrush">
+                    <source src="get-your-toothbrush.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+            </audio>
+        </div>
     </section>
     <section>
+        <div class="row">
         <h2>About</h2>
         <p>This is a prototype <abbr title="Progressive Web App">PWA</abbr> to help my daughter brush her teeth and for me to learn more about PWAs. You can see the original video that's used in this on the <a href="https://www.youtube.com/watch?v=wxMrtK-kYnE" target="_blank">Sesame Street YouTube channel</a>.  
+        </div>
     </section>
 </main> 
     <script>
