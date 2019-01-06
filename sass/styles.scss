@@ -12,6 +12,20 @@ h4 {font-size: 1.25em; margin-bottom: 0.5em;}
 address {margin-bottom: 1em;}
 p {margin-bottom: 1em; font-size: 1em; line-height: 1.1;}
 
+a {color: #ED4034;}
+
+header {
+    background-image: url(/images/elmo.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+header > h1 {
+    opacity: 1;
+    text-shadow: 1px 1px 4px #ffffff;
+}
+
 .row {
     padding: 1em;
 }
@@ -22,7 +36,7 @@ p {margin-bottom: 1em; font-size: 1em; line-height: 1.1;}
     width: 100%;
     min-height: 2em;
     bottom: 0;
-    background-color: #c4f0ff;
+    background-color: #ED4034;
     padding: 0.2em;
     border-top: 2px solid #d8f5ff;
 }
@@ -34,8 +48,9 @@ p {margin-bottom: 1em; font-size: 1em; line-height: 1.1;}
     padding: 0.5em;
     background-color: #ffffff;
     border-radius: 6px;
-    margin: 0;
-    min-width: 2.5em;
+    margin: 0 0.5em 0 0;
+    min-width: 44px;
+    min-height: 44px;
     text-align: center;
 }
 

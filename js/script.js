@@ -33,5 +33,12 @@ function restart() {
     if (myVideo.paused) {
         document.getElementById("playpause").innerHTML = "Pause";
         myVideo.play();
+        if (myVideo.requestFullscreen) {
+            myVideo.requestFullscreen({ navigationUI: "hide" })
+                .then({}).catch(err => {
+                    alert(`An error occurred while trying to switch into full-screen mode: ${err.message} (${err.name})`);
+              });
+              screen.orientation.lock("landscape-primary");
+            };
     }
 }
