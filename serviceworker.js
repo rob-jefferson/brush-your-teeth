@@ -1,38 +1,51 @@
-/*const staticCacheName = 'staticfiles';
+const version = 'V0.01';
+const staticCacheName = version + 'staticfiles';
 
 addEventListener('install', installEvent => {
     installEvent.waitUntil(
         caches.open(staticCacheName)
         .then( staticCache => {
             return staticCache.addAll([
-                //
-            ])
-        }
+                'images/elmo.png',
+                'css/styles.css',
+                'brushy-brush.mp4',
+                'get-your-toothbrush.mp3',
+                'js/script.js',
+                'index.html'
+            ]);
+        })
     ); //end waitUntil
 }); // end addEventListener*/
 
-addEventListener('install', function(event){
-    console.log('The service worker is installing...');
-});
+addEventListener('activate', activateEvent => {
+    activateEvent.waitUntil (
+        caches.keys()
+        .then( cacheNames => {
+            return Promise.all(
+                cacheNames.map( cacheName => {
+                    if (cacheName != staticCacheName) {
+                        return caches.delete(cacheName);
+                        console.log('Old cache deleted');
+                    }
+                }) //end map
+            ); //end return Promise.all
+        }) //end keys ten
+        .then( () => {
+            return ClientRectList.claim();
+        }) //end then
+    ); //end waitUntil
+}); //end addEventListener
 
-addEventListener('activate', function(event){
-    console.log('The service worker is activated.');
-});
 
 addEventListener('fetch', fetchEvent => {
-    /*const request = fetchEvent.request;
+    const request = fetchEvent.request;
     fetchEvent.respondWith(
-        fetch(request)
-        .then(respondFromFetch => {
-            return reponseFromFetch;
-        }) //end fetch then
-        .catch(error => {
-            console.log(request);
-            return new Response(
-                '<h1>Oops</h1> <p>Something went wrong.</p>', {
-                    headers: {'Content-type': 'text/html; charset=utf-8'}
-                }
-            );
-        }) //end fetch catch
-    ); //end respondWith*/
-}); //end addEventListener
+        caches.match(request)
+        .then (responseFromCache => {
+            if (responseFromCache) {
+                return responseFromCache;
+            }
+            return fetch(request);
+        })
+    );
+});
