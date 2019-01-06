@@ -8,10 +8,12 @@ function playAudio() {
 
 // Custom video controls
 var myVideo = document.getElementById("toothbrush");
+var playIcon = "<i class='fas fa-play-circle'></i>";
+var pauseIcon = "<i class='fas fa-pause-circle'></i>";
 
 function playPause() {
     if (myVideo.paused) {
-        document.getElementById("playpause").innerHTML = "Pause";
+        document.getElementById("playpause").innerHTML = pauseIcon;
         myVideo.play();
         if (myVideo.requestFullscreen) {
             myVideo.requestFullscreen({ navigationUI: "hide" })
@@ -23,7 +25,7 @@ function playPause() {
     }
 
     else {
-        document.getElementById("playpause").innerHTML = "Play";
+        document.getElementById("playpause").innerHTML = playIcon;
         myVideo.pause();
     }
 }
@@ -31,7 +33,7 @@ function playPause() {
 function restart() {
     myVideo.currentTime = 5;
     if (myVideo.paused) {
-        document.getElementById("playpause").innerHTML = "Pause";
+        document.getElementById("playpause").innerHTML = pauseIcon;
         myVideo.play();
         if (myVideo.requestFullscreen) {
             myVideo.requestFullscreen({ navigationUI: "hide" })

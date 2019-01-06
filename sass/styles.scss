@@ -21,6 +21,10 @@ header {
     background-position-x: right;
 }
 
+footer {
+    margin-bottom: 1em;
+}
+
 header > h1 {
     opacity: 1;
     text-shadow: 1px 1px 4px #ffffff;
@@ -36,26 +40,30 @@ header > h1 {
     width: 100%;
     min-height: 2em;
     bottom: 0;
-    background-color: #ED4034;
+    background-color: $nose;
     padding: 0.2em;
     border-top: 2px solid #d8f5ff;
+    display: flex;
+
+}
+
+.fas {
+    font-size: 2em;
 }
 
 .controls button {
-    color: #002c3b;
-    font-size: 1em;
+    color: $body;
+    font-size: 1.25em;
     font-family: 'Indie Flower';
-    padding: 0.5em;
+    padding: 1em;
     background-color: #ffffff;
     border-radius: 6px;
-    margin: 0 0.5em 0 0;
-    min-width: 44px;
-    min-height: 44px;
+    margin: 0.25em 0.5em 0.25em 0.25em;
+    //min-width: 44px;
+    //min-height: 44px;
     text-align: center;
-}
-
-.controls button:last-of-type {
-    margin-right: 8px;
+    flex: 1;
+    line-height: 1em;
 }
 
 .controls button:focus {

@@ -8,6 +8,7 @@
     <!--<link rel="serviceworker" href="serviceworker.js">-->
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Brush your teeth!</title>
     
 </head>
@@ -17,9 +18,9 @@
             <h1>Brush your teeth</h1>
         </header>
         <div class="controls">
-            <button onclick="restart()">Restart</button>
-            <button id="playpause" onclick="playPause()">Play</button>
-            <button id="audio" onclick="playAudio()">Call the child</button>
+            <button onclick="restart()"><i class="fas fa-redo"></i></button>
+            <button id="playpause" onclick="playPause()"><i class="fas fa-play-circle"></i></button>
+            <button id="audio" onclick="playAudio()"><i class="fas fa-bath"></i></button>
         </div>
         <section>
         <div class="player">
@@ -35,12 +36,12 @@
             </audio>
         </div>
     </section>
-    <section>
+    <footer>
         <div class="row">
         <h2>About</h2>
         <p>This is a prototype <abbr title="Progressive Web App">PWA</abbr> to help my daughter brush her teeth and for me to learn more about PWAs. You can see the original video that's used in this on the <a href="https://www.youtube.com/watch?v=wxMrtK-kYnE" target="_blank">Sesame Street YouTube channel</a>.  
         </div>
-    </section>
+    </footer>
 </main> 
     <script>
         // Starts the video 5 seconds in to skip the "Time to get your toothbrush!" CTA

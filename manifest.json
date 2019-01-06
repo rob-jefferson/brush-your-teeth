@@ -3,8 +3,8 @@
     "name": "Brush your teeth",
     "short_name": "Brushy Brush",
     "description": "This is my progressive web app to help my daughter brush her teeth.",
-    "theme_color": "#333333",
-    "background_color": "#333333",
+    "theme_color": "#ED4034",
+    "background_color": "#ED4034",
     "start_url": "/brush-your-teeth/",
     "display": "standalone",
     "icons": [
