@@ -20,18 +20,19 @@ addEventListener('activate', function(event){
 });
 
 addEventListener('fetch', fetchEvent => {
-    const request = fetchEvent.request;
+    /*const request = fetchEvent.request;
     fetchEvent.respondWith(
         fetch(request)
         .then(respondFromFetch => {
             return reponseFromFetch;
         }) //end fetch then
         .catch(error => {
+            console.log(request);
             return new Response(
                 '<h1>Oops</h1> <p>Something went wrong.</p>', {
                     headers: {'Content-type': 'text/html; charset=utf-8'}
                 }
             );
         }) //end fetch catch
-    ); //end respondWith
+    ); //end respondWith*/
 }); //end addEventListener
