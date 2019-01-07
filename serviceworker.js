@@ -49,7 +49,7 @@ addEventListener('fetch', fetchEvent => {
             }
             return fetch(request)
             .catch (error => {
-                return caches.match('/offline.html');
+                return caches.match('offline.html');
             });
         })
     );
