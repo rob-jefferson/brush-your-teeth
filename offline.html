@@ -5,14 +5,13 @@
 
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, minimum-scale = 1.0, initial-scale = 1.0, maximum-scale = 5.0, user-scalable=yes, shrink-to-fit=no">
-    <link rel="serviceworker" href="serviceworker.js">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Brush your teeth!</title>
     
 </head>
-<body>      
+<body>    
     <main>
         <header class="row">
             <h1>Brush your teeth</h1>
@@ -37,9 +36,9 @@
         </div>
     </section>
     <footer>
-        <div class="row">
-        <h2>About</h2>
-        <p>This is a prototype <abbr title="Progressive Web App">PWA</abbr> to help my daughter brush her teeth and for me to learn more about PWAs. You can see the original video that's used in this on the <a href="https://www.youtube.com/watch?v=wxMrtK-kYnE" target="_blank">Sesame Street YouTube channel</a>.  
+        <div class="row warning">
+        <h2>Offline!</h2>
+        <p>You are currently offline and viewing a cached version of this app.</p>
         </div>
     </footer>
 </main> 
@@ -49,7 +48,7 @@
                 this.currentTime = 5;
             }, false);
     </script>
-   <script>
+   <!--<script>
     if (navigator.serviceWorker) {
         navigator.serviceWorker.register('serviceworker.js')
         .then( function(registration) {
@@ -60,7 +59,7 @@
         })
         console.log('All done.');
     }
-    </script>
+    </script>-->
     <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>

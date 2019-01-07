@@ -1,4 +1,4 @@
-const version = 'V0.01';
+const version = 'V0.06';
 const staticCacheName = version + 'staticfiles';
 
 addEventListener('install', installEvent => {
@@ -11,7 +11,9 @@ addEventListener('install', installEvent => {
                 'brushy-brush.mp4',
                 'get-your-toothbrush.mp3',
                 'js/script.js',
-                'index.html'
+                'offline.html',
+                'images/poster.jpg',
+                'fa-solid-900.woff2'
             ]);
         })
     ); //end waitUntil
@@ -31,7 +33,7 @@ addEventListener('activate', activateEvent => {
             ); //end return Promise.all
         }) //end keys ten
         .then( () => {
-            return ClientRectList.claim();
+            return clients.claim();
         }) //end then
     ); //end waitUntil
 }); //end addEventListener
@@ -47,7 +49,7 @@ addEventListener('fetch', fetchEvent => {
             }
             return fetch(request)
             .catch (error => {
-                return caches.match('/index.html');
+                return caches.match('/offline.html');
             });
         })
     );
