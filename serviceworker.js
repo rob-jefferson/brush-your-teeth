@@ -45,7 +45,10 @@ addEventListener('fetch', fetchEvent => {
             if (responseFromCache) {
                 return responseFromCache;
             }
-            return fetch(request);
+            return fetch(request)
+            .catch (error => {
+                return caches.match('/index.html');
+            });
         })
     );
 });
