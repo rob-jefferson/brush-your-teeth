@@ -49,3 +49,8 @@ function restart() {
             };
     }
 }
+
+myVideo.onended = function() {
+    myvideo.exitFullscreen;
+    screen.orientation.unlock;
+};
