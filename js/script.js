@@ -4,11 +4,11 @@ var myAudio = document.getElementById("gettoothbrush");
 function playAudio() {
     if (myAudio.paused) 
         myAudio.play();
-};
+}
 
 myAudio.onended = function() {
         console.log('Audio stopped');
-};
+}
 
 
 // Custom video controls
@@ -27,13 +27,13 @@ function playPause() {
               });
               screen.orientation.lock("landscape-primary");
         };
-    };
+    }
 
     else {
         document.getElementById("playpause").innerHTML = playIcon;
         myVideo.pause();
-    };
-};
+    }
+}
 
 function restart() {
     myVideo.currentTime = 5;
@@ -47,8 +47,8 @@ function restart() {
               });
               screen.orientation.lock("landscape-primary");
             };
-    };
-};
+    }
+}
 
 myVideo.onended = function() {
     console.log('Video finished');
@@ -58,4 +58,4 @@ myVideo.onended = function() {
         document.exitFullscreen();
         screen.orientation.unlock("portrait-primary");
     };
-};
+}
