@@ -44,3 +44,9 @@ function restart() {
             };
     }
 }
+
+function finished() {
+    if(myVideo.ended) {
+        console.log('Video stopped');
+    }
+}
