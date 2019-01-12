@@ -51,6 +51,6 @@ function restart() {
 }
 
 myVideo.onended = function() {
-    myvideo.exitFullscreen;
+    myVideo.exitFullscreen;
     screen.orientation.unlock;
 };
