@@ -6,6 +6,11 @@ function playAudio() {
         myAudio.play();
 }
 
+myAudio.onended = function() {
+        console.log('Audio stopped');
+};
+
+
 // Custom video controls
 var myVideo = document.getElementById("toothbrush");
 var playIcon = "<i class='fas fa-play-circle'></i>";
@@ -42,11 +47,5 @@ function restart() {
               });
               screen.orientation.lock("landscape-primary");
             };
-    }
-}
-
-function finished() {
-    if(myVideo.ended) {
-        console.log('Video stopped');
     }
 }
