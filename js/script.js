@@ -52,6 +52,6 @@ function restart() {
 
 myVideo.onended = function() {
     console.log('Video finished');
-    myVideo.exitFullscreen();
+    document.exitFullscreen();
     screen.orientation.unlock("portrait-primary");
 };
