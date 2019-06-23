@@ -19,7 +19,6 @@ var pauseIcon = "<i class='fas fa-pause-circle'></i>";
 function playPause() {
     if (myVideo.paused) {
         document.getElementById("playpause").innerHTML = pauseIcon;
-        myVideo.play();
         if (myVideo.requestFullscreen) {
             myVideo.requestFullscreen({ navigationUI: "hide" })
                 .then({}).catch(err => {
@@ -27,6 +26,7 @@ function playPause() {
               });
               screen.orientation.lock("landscape-primary");
         };
+        myVideo.play();
     }
 
     else {
@@ -39,7 +39,6 @@ function restart() {
     myVideo.currentTime = 5;
     if (myVideo.paused) {
         document.getElementById("playpause").innerHTML = pauseIcon;
-        myVideo.play();
         if (myVideo.requestFullscreen) {
             myVideo.requestFullscreen({ navigationUI: "hide" })
                 .then({}).catch(err => {
@@ -47,6 +46,7 @@ function restart() {
               });
               screen.orientation.lock("landscape-primary");
             };
+        myVideo.play();
     }
 }
 
